@@ -2,50 +2,51 @@
 
 > Copy-paste the prompt below into a new Claude Code terminal session.
 
+**Last updated**: 2026-01-07 (P1+P2 complete, maintenance infrastructure built)
+
 ---
 
 ## The Prompt
 
 ```
-I need you to help improve and maintain this repository. This is a documentation + skills library for Claude Code.
+Help me continue improving this Claude Code documentation + skills library repository.
 
-**PHASE 1: ORIENTATION (Do this first, don't skip)**
+**PHASE 1: ORIENTATION** (Read before acting)
 
-Read these files in order to understand the current state:
-1. /CLAUDE.md - Your primary guidance document
-2. /_repo-maintenance/context-for-llm-agents.md - Continuation context from previous session
-3. /_repo-maintenance/01-current-state.md - Repository inventory
-4. /_repo-maintenance/02-challenges.md - Identified problems
-5. /_repo-maintenance/03-recommendations.md - Prioritized solutions (P1/P2/P3)
+Start with these files, in order:
+1. /CLAUDE.md — Primary agent guidance
+2. /_repo-maintenance/SESSION-2026-01-07-maintenance-infrastructure.md — Recent work summary
+3. /_repo-maintenance/context-for-llm-agents.md — Continuation context
+4. /_repo-maintenance/03-recommendations.md — Implementation status (P1+P2 done, P3 remaining)
 
-If working with skills specifically, also read the folder /11-external-resources/_meta/, starting with the file:
+For skills work, also read:
 - /11-external-resources/_meta/CONTINUATION-GUIDE.md
 
 **PHASE 2: CRITICAL ANALYSIS**
 
-After reading, I want you to:
-1. Summarize what you understand about the current state
-2. Identify which recommendations from 03-recommendations.md are most valuable, and consider enhancements suggested in /11-external-resources/_meta/ subfolder, and how they may interrelate
-3. Consider if any recommendations are now outdated or if you see new opportunities, and consider how order of operations may effect your effectiveness as Claude Code agent
-4. Propose your own prioritized implementation plan with rationale
+After reading:
+1. Summarize what's already built vs. what remains
+2. Review unimplemented items (R7, R9, R10 in 03-recommendations.md) and enhancements in /11-external-resources/_meta/FUTURE-ENHANCEMENTS.md
+3. Identify new opportunities beyond the existing recommendations
+4. Propose prioritized next steps with rationale
 
 **PHASE 3: WORKSPACE SETUP**
 
-Before implementing, create a development workspace:
-1. Create a TODO/progress tracking system for your work
-2. Consider using Claude Code Skills if any are relevant (run `./11-external-resources/tools/deploy-all.sh` first if needed)
-3. Break work into modular phases that can be completed incrementally
-4. Document key decisions as you make them
+Before implementing:
+1. Use TodoWrite to track your work
+2. Consider deploying skills (`./11-external-resources/tools/deploy-all.sh`) if helpful
+3. Break work into modular phases
+4. Use subagents for parallel or specialized tasks where appropriate
 
 **PHASE 4: IMPLEMENTATION**
 
-Execute your plan, but:
-- Complete one recommendation fully before starting the next
-- Test/validate each change
+Execute iteratively:
+- Complete one item fully before starting the next
+- Test and validate each change
 - Update documentation as you go
-- Log what you did in /_repo-maintenance/ for future sessions
+- Create/update a session log in /_repo-maintenance/
 
-Take your time on Phase 1-2. I'd rather you understand deeply than rush to implementation.
+Take your time on Phases 1-2. Deep understanding beats rushed implementation.
 ```
 
 ---
@@ -53,14 +54,14 @@ Take your time on Phase 1-2. I'd rather you understand deeply than rush to imple
 ## Shorter Version (if you prefer brevity)
 
 ```
-This repo has extensive maintenance documentation. Before doing anything:
+This repo has maintenance infrastructure already built (P1+P2 complete). Before doing anything:
 
-1. Read /_repo-maintenance/context-for-llm-agents.md (critical context)
-2. Read /_repo-maintenance/03-recommendations.md (prioritized action items)
-3. Tell me what you think we should implement and why
-4. Create a tracked implementation plan before executing
+1. Read /_repo-maintenance/SESSION-2026-01-07-maintenance-infrastructure.md (what's done)
+2. Read /_repo-maintenance/03-recommendations.md (remaining P3 items: R7, R9, R10)
+3. Tell me what you think we should do next and why
+4. Use TodoWrite to track your implementation plan
 
-The repo already has analysis of what needs to be done - build on it, don't restart.
+Build on existing work - don't restart the analysis.
 ```
 
 ---
@@ -68,7 +69,7 @@ The repo already has analysis of what needs to be done - build on it, don't rest
 ## Ultra-Short Version
 
 ```
-Read /_repo-maintenance/context-for-llm-agents.md first, then tell me your implementation plan for the recommendations in 03-recommendations.md.
+Read /_repo-maintenance/context-for-llm-agents.md, then propose next steps for the remaining recommendations (R7, R9, R10) or new opportunities you identify.
 ```
 
 ---
@@ -98,14 +99,19 @@ Read /_repo-maintenance/context-for-llm-agents.md first, then tell me your imple
 
 After the initial bootstrap, you might say:
 
-**To focus on a specific area:**
+**To focus on remaining recommendations:**
 ```
-Let's focus on P1 recommendations only. Start with R1 (commit SHA tracking). Show me the changes before making them.
+Let's implement R7 (check-links.sh) from 03-recommendations.md. Show me your plan before making changes.
+```
+
+**To explore new opportunities:**
+```
+Now that the maintenance infrastructure exists, what new capabilities or improvements would you suggest? Think beyond the original recommendations.
 ```
 
 **To leverage Claude Code features:**
 ```
-Before implementing, check if any of the deployed skills would help with this work. Also consider if any subtasks should use subagents.
+Before implementing, deploy the skills library and check if any would help. Also consider if subtasks should use subagents for parallel work.
 ```
 
 **To ensure documentation:**
