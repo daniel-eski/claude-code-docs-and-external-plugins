@@ -1,17 +1,89 @@
 # Claude Code Documentation
 
-> Complete offline documentation for Claude Code, Anthropic's agentic coding tool.
+> Complete offline documentation for Claude Code, Anthropic's agentic coding tool, plus a curated library of community skills.
 
-This repository contains a local copy of all Claude Code documentation from [code.claude.com](https://code.claude.com), organized for easy navigation and LLM consumption.
+This repository combines:
+- **Official documentation** from [code.claude.com](https://code.claude.com) for offline reference
+- **32 production-ready skills** from the community, ready to deploy
+- **Skill authoring guides** to help you create your own skills
 
-**Last Updated:** January 6, 2026
+**Last Updated:** January 6, 2026 (documentation) | January 7, 2026 (skills & repo structure)
 
 ---
 
-## 📁 Documentation Structure
+## 🚀 Quick Start
+
+### For Claude Code Documentation
+Browse folders `01-10` for official documentation on any topic.
+
+### For Skills
+```bash
+# Deploy all 32 skills at once
+cd 11-external-resources/tools/
+./deploy-all.sh
+
+# Or deploy a single skill
+./deploy-skill.sh ../core-skills/obra-workflow/brainstorming
+```
+
+### For AI Agents
+See [CLAUDE.md](CLAUDE.md) for comprehensive guidance on working with this repository.
+
+---
+
+## 📁 Repository Structure
+
+### Core Documentation (folders 01-10)
+
+Official Claude Code documentation mirrored from https://code.claude.com/docs.
+
+| Folder | Topic | Files |
+|--------|-------|-------|
+| [01-getting-started/](01-getting-started/) | Installation, setup, first steps | 4 |
+| [02-core-features/](02-core-features/) | Skills, memory, hooks, MCP, subagents | 7 |
+| [03-ide-integration/](03-ide-integration/) | VS Code, JetBrains, Desktop, Chrome | 4 |
+| [04-cloud-providers/](04-cloud-providers/) | AWS Bedrock, GCP Vertex AI, Azure | 4 |
+| [05-enterprise/](05-enterprise/) | Security, IAM, monitoring, sandboxing | 6 |
+| [06-cicd-automation/](06-cicd-automation/) | GitHub Actions, GitLab CI/CD, headless | 4 |
+| [07-plugins/](07-plugins/) | Plugin creation, discovery, marketplaces | 4 |
+| [08-configuration/](08-configuration/) | Settings, model config, terminal setup | 6 |
+| [09-reference/](09-reference/) | CLI reference, troubleshooting, costs | 6 |
+| [10-other/](10-other/) | Slack, changelog, legal, workflows | 4 |
+
+### Skills Library (11-external-resources/)
+
+Curated external skills ready to deploy.
+
+| Directory | Description | Count |
+|-----------|-------------|-------|
+| [core-skills/](11-external-resources/core-skills/) | Production-ready skills | 28 |
+| [extended-skills/](11-external-resources/extended-skills/) | Specialized AWS skills | 4 |
+| [reference/](11-external-resources/reference/) | Links to community skills | 30+ |
+| [tools/](11-external-resources/tools/) | Deployment & validation scripts | 5 |
+| [meta/](11-external-resources/meta/) | Skill authoring documentation | 3 |
+| [_meta/](11-external-resources/_meta/) | AI agent continuation docs | 4 |
+
+**Key files:**
+- [CATALOG.md](11-external-resources/CATALOG.md) — Complete skill inventory
+- [QUICKSTART.md](11-external-resources/QUICKSTART.md) — 5-minute deployment guide
+- [_meta/CONTINUATION-GUIDE.md](11-external-resources/_meta/CONTINUATION-GUIDE.md) — For AI agents working with skills
+
+### Repository Meta (_repo-maintenance/)
+
+Analysis and recommendations for repository maintenance.
+
+| Document | Purpose |
+|----------|---------|
+| [README.md](_repo-maintenance/README.md) | Overview and document index |
+| [context-for-llm-agents.md](_repo-maintenance/context-for-llm-agents.md) | Continuation context for AI assistants |
+| [01-current-state.md](_repo-maintenance/01-current-state.md) | Complete repository analysis |
+| [03-recommendations.md](_repo-maintenance/03-recommendations.md) | Improvement recommendations |
+
+---
+
+## 📚 Documentation Details
 
 ### 01-getting-started/
-Get up and running with Claude Code quickly.
 
 | File | Description |
 |------|-------------|
@@ -21,7 +93,6 @@ Get up and running with Claude Code quickly.
 | [interactive-mode.md](01-getting-started/interactive-mode.md) | Complete reference for keyboard shortcuts, input modes, and interactive features |
 
 ### 02-core-features/
-Deep dives into Claude Code's core capabilities.
 
 | File | Description |
 |------|-------------|
@@ -34,7 +105,6 @@ Deep dives into Claude Code's core capabilities.
 | [mcp.md](02-core-features/mcp.md) | Connect Claude Code to your tools with the Model Context Protocol |
 
 ### 03-ide-integration/
-Integrate Claude Code with your development environment.
 
 | File | Description |
 |------|-------------|
@@ -44,7 +114,6 @@ Integrate Claude Code with your development environment.
 | [chrome.md](03-ide-integration/chrome.md) | Connect Claude Code to your browser to test web apps and automate tasks |
 
 ### 04-cloud-providers/
-Configure Claude Code with various cloud AI providers.
 
 | File | Description |
 |------|-------------|
@@ -54,7 +123,6 @@ Configure Claude Code with various cloud AI providers.
 | [llm-gateway.md](04-cloud-providers/llm-gateway.md) | Configure Claude Code to work with LLM gateway solutions |
 
 ### 05-enterprise/
-Enterprise deployment and security configurations.
 
 | File | Description |
 |------|-------------|
@@ -66,7 +134,6 @@ Enterprise deployment and security configurations.
 | [third-party-integrations.md](05-enterprise/third-party-integrations.md) | Enterprise deployment overview with third-party services |
 
 ### 06-cicd-automation/
-Automate Claude Code in CI/CD pipelines and programmatic usage.
 
 | File | Description |
 |------|-------------|
@@ -76,7 +143,6 @@ Automate Claude Code in CI/CD pipelines and programmatic usage.
 | [claude-code-on-the-web.md](06-cicd-automation/claude-code-on-the-web.md) | Run Claude Code tasks asynchronously on secure cloud infrastructure |
 
 ### 07-plugins/
-Extend Claude Code with the plugin system.
 
 | File | Description |
 |------|-------------|
@@ -86,7 +152,6 @@ Extend Claude Code with the plugin system.
 | [plugin-marketplaces.md](07-plugins/plugin-marketplaces.md) | Create and distribute a plugin marketplace |
 
 ### 08-configuration/
-Configure Claude Code settings and behavior.
 
 | File | Description |
 |------|-------------|
@@ -98,7 +163,6 @@ Configure Claude Code settings and behavior.
 | [checkpointing.md](08-configuration/checkpointing.md) | Automatically track and rewind Claude's edits |
 
 ### 09-reference/
-Reference documentation and troubleshooting guides.
 
 | File | Description |
 |------|-------------|
@@ -110,7 +174,6 @@ Reference documentation and troubleshooting guides.
 | [devcontainer.md](09-reference/devcontainer.md) | Development container for consistent, secure environments |
 
 ### 10-other/
-Additional resources and integrations.
 
 | File | Description |
 |------|-------------|
@@ -119,35 +182,76 @@ Additional resources and integrations.
 | [legal-and-compliance.md](10-other/legal-and-compliance.md) | Legal agreements, compliance certifications, and security information |
 | [common-workflows.md](10-other/common-workflows.md) | Learn about common workflows with Claude Code |
 
-### 11-external-resources/
-Curated external skills and resources for skill development.
+---
 
-| File/Directory | Description |
-|----------------|-------------|
-| [README.md](11-external-resources/README.md) | Overview and navigation guide |
-| [CATALOG.md](11-external-resources/CATALOG.md) | Complete indexed catalog of all skills |
-| [QUICKSTART.md](11-external-resources/QUICKSTART.md) | 5-minute deployment guide |
-| [core-skills/](11-external-resources/core-skills/) | 28 production-ready skills (obra, fvadicamo, anthropics) |
-| [extended-skills/](11-external-resources/extended-skills/) | 4 AWS skills + context engineering links |
-| [reference/](11-external-resources/reference/) | Links to community skills and learning resources |
-| [tools/](11-external-resources/tools/) | Deployment and validation scripts |
-| [meta/](11-external-resources/meta/) | Skill authoring documentation |
+## 🛠 Skills Library Highlights
+
+### Workflow Skills (from Jesse Vincent's obra/superpowers)
+- **brainstorming** — Generate and explore ideas systematically
+- **writing-plans** — Create strategic documentation
+- **dispatching-parallel-agents** — Coordinate multiple simultaneous agents
+- **using-tmux-for-interactive-commands** — Control vim, git, and other interactive tools
+
+### Development Skills
+- **test-driven-development** — Write tests before implementing code (371 lines)
+- **systematic-debugging** — Methodical problem-solving in code
+- **git-commit** — Conventional Commits format with best practices
+- **github-pr-creation** — Create well-structured pull requests
+
+### Document Creation (from Anthropic)
+- **docx** — Create, edit, and analyze Word documents
+- **xlsx** — Create, edit, and analyze Excel spreadsheets
+- **pptx** — Create, edit, and analyze PowerPoint presentations
+- **pdf** — Extract text, create PDFs, and handle forms
+
+See [11-external-resources/CATALOG.md](11-external-resources/CATALOG.md) for the complete list.
 
 ---
 
 ## 📊 Quick Stats
 
-- **Total Documentation Files:** 49
-- **Categories:** 11 (including external resources)
-- **External Skills:** 32 (28 core + 4 extended)
-- **Source:** https://code.claude.com/docs
+| Metric | Count |
+|--------|-------|
+| Documentation files | 49 |
+| Categories | 11 |
+| Core skills | 28 |
+| Extended skills | 4 |
+| Community skill links | 30+ |
+| Deployment tools | 5 |
+
+---
 
 ## 🔗 Additional Resources
 
-- **Official Documentation:** https://code.claude.com
-- **LLMs.txt Index:** See [llms.txt](llms.txt) for the official documentation index
+### Official
+- **Claude Code**: https://code.claude.com
+- **Documentation Index**: See [llms.txt](llms.txt)
+- **Anthropic Skills Repo**: https://github.com/anthropics/skills
+
+### Community
+- **Awesome Claude Skills**: https://github.com/VoltAgent/awesome-claude-skills
+- **obra/superpowers**: https://github.com/obra/superpowers
+
+---
+
+## 🤖 For AI Agents
+
+If you're an AI assistant (Claude Code, etc.) working with this repository:
+
+1. **Read [CLAUDE.md](CLAUDE.md)** for comprehensive guidance
+2. **For structural changes**, read `_repo-maintenance/context-for-llm-agents.md` first
+3. **The documentation is authoritative** as of the sync date in this file
+
+---
+
+## 📝 Maintenance
+
+This repository is designed for both human use and AI agent consumption. Key maintenance resources:
+
+- **Maintenance analysis**: [`_repo-maintenance/`](_repo-maintenance/) 
+- **Skill update tool**: `11-external-resources/tools/update-sources.sh`
+- **Validation**: `11-external-resources/tools/validate-skill.sh`
 
 ---
 
 > To find navigation and other pages in this documentation, fetch the llms.txt file at: https://code.claude.com/docs/llms.txt
-

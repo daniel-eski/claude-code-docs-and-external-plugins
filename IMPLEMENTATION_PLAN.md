@@ -1,5 +1,56 @@
 # External Skills Integration: Implementation Plan
 
+> ⚠️ **HISTORICAL DOCUMENT** — This plan was created in January 2026 and has been **completed**. It is preserved for reference to understand the design decisions behind the `11-external-resources/` structure.
+>
+> **Status**: ✅ Implemented  
+> **Completed**: January 6-7, 2026  
+> **See also**: [`_repo-maintenance/`](_repo-maintenance/) for current maintenance analysis and future improvements
+
+---
+
+## Implementation Summary
+
+### What Was Planned vs. Implemented
+
+| Planned | Actual Implementation | Notes |
+|---------|----------------------|-------|
+| `high-priority/` folder | `core-skills/` folder | Clearer naming |
+| `medium-priority/` folder | `extended-skills/` folder | Clearer naming |
+| `scripts/` folder | `tools/` folder | Matches conventions |
+| `SKILLS_CATALOG.md` | `CATALOG.md` | Shorter name |
+| `DEPLOYMENT_GUIDE.md` | `QUICKSTART.md` | More action-oriented |
+| 31 high-priority skills | 28 working + 2 placeholders | 2 repos inaccessible |
+| 9 medium-priority skills | 4 AWS skills + links | Context engineering as links only |
+| Commit SHA tracking | Fetch timestamp only | **Gap identified** — see `_repo-maintenance/03-recommendations.md` |
+
+### Skills Successfully Fetched
+
+| Category | Planned | Actual | Status |
+|----------|---------|--------|--------|
+| obra-workflow | 7 | 6 | ✅ Complete |
+| obra-development | 14 | 9 | ✅ Complete (some consolidated) |
+| git-workflow | 2 | 6 | ✅ Exceeded (fvadicamo has 5) |
+| testing | 2 | 1 working, 1 placeholder | ⚠️ pypict-skill inaccessible |
+| document-creation | 5 | 5 | ✅ Complete |
+| skill-authoring | (not planned) | 2 | ✅ Added (templates) |
+| aws-skills | 4 | 4 | ✅ Complete |
+
+### Infrastructure Created
+
+- ✅ `fetch-skill.sh` — Downloads skills from GitHub
+- ✅ `validate-skill.sh` — Validates SKILL.md format
+- ✅ `deploy-skill.sh` — Deploys single skills
+- ✅ `deploy-all.sh` — Bulk deployment
+- ✅ `update-sources.sh` — Re-fetch all skills
+- ✅ `.source` files — Track origin and fetch timestamp
+
+---
+
+## Original Plan (Preserved for Reference)
+
+<details>
+<summary>Click to expand original planning document</summary>
+
 ## Objective
 
 Enhance this documentation repository by integrating external Claude Skills from the community, creating a deployable resource for developing and testing skills.
@@ -284,3 +335,26 @@ Add section documenting:
 1. **Deployment preference**: Should the guide default to `~/.claude/skills/` (personal) or `.claude/skills/` (project)?
 2. **Anthropic skills**: The anthropics/* repos may require special access. Should I attempt to fetch them, or just document links?
 3. **Supporting files**: Some skills have scripts/helpers. Fetch all, or SKILL.md only initially?
+
+</details>
+
+---
+
+## Lessons Learned
+
+1. **Repository accessibility varies**: Some GitHub repos are private or renamed. Creating placeholder skills with `.source` files preserves the intent for future retry.
+
+2. **Naming matters**: "core-skills" is more intuitive than "high-priority" — describes content, not importance.
+
+3. **Commit SHA tracking should have been included from the start**: The `.source` files track fetch timestamp but not the upstream commit, making change detection impossible. This is documented as a gap in `_repo-maintenance/03-recommendations.md`.
+
+4. **meta/ folder is valuable**: Adding skill authoring documentation (`skill-anatomy.md`, `patterns-and-antipatterns.md`) significantly improves the repository's usefulness.
+
+---
+
+## Current State
+
+For the current repository state and future improvement plans, see:
+- [`_repo-maintenance/01-current-state.md`](_repo-maintenance/01-current-state.md) — Full inventory
+- [`_repo-maintenance/03-recommendations.md`](_repo-maintenance/03-recommendations.md) — Improvement roadmap
+- [`11-external-resources/CATALOG.md`](11-external-resources/CATALOG.md) — Live skills catalog
