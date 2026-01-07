@@ -4,6 +4,8 @@
 
 Read this document first when picking up work on repository maintenance.
 
+**See also**: [BOOTSTRAP-PROMPT.md](BOOTSTRAP-PROMPT.md) — Ready-to-use prompts for starting new sessions.
+
 ---
 
 ## Quick Orientation
@@ -34,12 +36,25 @@ Read this document first when picking up work on repository maintenance.
 | Analysis | ✅ Complete |
 | Recommendations | ✅ Documented |
 | Implementation Specs | ✅ Documented |
-| Implementation | ⏳ Not started |
-| Validation | ⏳ Pending |
+| Implementation | ✅ P1+P2 Complete |
+| Validation | ✅ Complete |
 
-**Last action taken**: Created this maintenance documentation folder.
+**Last action taken**: Fixed all remaining "unknown" commit SHAs. Implementation 100% complete.
 
-**Next recommended action**: Get human review of recommendations, then implement P1 items.
+**Implemented tools**:
+- `fetch-skill.sh` - Enhanced with commit SHA tracking
+- `freshness-report.sh` - Detects stale skills
+- `regenerate-catalog.sh` - Auto-generates CATALOG.md
+- `generate-stats.sh` - Generates repository statistics
+- `migrate-source-files.sh` - One-time migration for existing .source files
+- `fix-unknown-shas.sh` - Fix skills with "unknown" commit SHAs
+
+**New files created**:
+- `CHANGELOG.md` - Repository change history
+- `CONTRIBUTING.md` - Contribution guidelines
+- `.repo-metadata.json` - Centralized sync state
+
+**Current state**: 32 working skills have valid commit SHAs. 2 placeholder skills have "unknown" (expected - source repos don't exist).
 
 ---
 
@@ -90,19 +105,25 @@ Each skill has a `.source` file:
 ```yaml
 source: https://github.com/obra/superpowers/tree/main/skills/brainstorming
 fetched: 2026-01-07T00:17:35Z
+commit_sha: 612fbcdc5b8a3f7e1d2c4b5a6f7e8d9c0b1a2e3f
+branch: main
 ```
 
-**Important gap**: No commit SHA tracking (cannot detect upstream changes).
+**Freshness detection**: Use `freshness-report.sh` to compare local commit SHAs against upstream.
 
 ### Existing Tools
 
 | Tool | Location | Purpose |
 |------|----------|---------|
-| fetch-skill.sh | `11-external-resources/tools/` | Download skills from GitHub |
+| fetch-skill.sh | `11-external-resources/tools/` | Download skills from GitHub (with commit SHA) |
 | validate-skill.sh | `11-external-resources/tools/` | Validate SKILL.md format |
 | deploy-skill.sh | `11-external-resources/tools/` | Deploy to Claude Code |
 | deploy-all.sh | `11-external-resources/tools/` | Bulk deployment |
 | update-sources.sh | `11-external-resources/tools/` | Re-fetch all skills |
+| freshness-report.sh | `11-external-resources/tools/` | Check for upstream updates |
+| regenerate-catalog.sh | `11-external-resources/tools/` | Auto-generate CATALOG.md |
+| generate-stats.sh | `11-external-resources/tools/` | Generate repository statistics |
+| fix-unknown-shas.sh | `11-external-resources/tools/` | Fix "unknown" commit SHAs |
 
 ### Placeholder Skills
 
@@ -235,6 +256,8 @@ If context is unclear, ask:
 
 | Date | Agent | Action |
 |------|-------|--------|
+| 2026-01-07 | Claude Code | Fixed all unknown SHAs, added fix-unknown-shas.sh, marked implementation complete |
+| 2026-01-07 | Claude Code | Implemented P1+P2 recommendations (R1-R6, R8) |
 | 2026-01-07 | Claude Code | Initial analysis and documentation |
 | 2026-01-07 | Claude Code | Enhanced root files (CLAUDE.md, README.md, IMPLEMENTATION_PLAN.md) |
 

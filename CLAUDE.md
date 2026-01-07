@@ -117,7 +117,10 @@ Both documentation sets ensure continuity across AI sessions.
 ├── 10-other/                # 4 docs: slack, changelog, legal, workflows
 ├── 11-external-resources/   # Skills library with tools and guides
 ├── _repo-maintenance/       # Maintenance analysis and recommendations
+├── .repo-metadata.json      # Centralized sync state and statistics
+├── CHANGELOG.md             # Repository change history
 ├── CLAUDE.md                # This file
+├── CONTRIBUTING.md          # Contribution guidelines
 ├── README.md                # Human-readable overview
 ├── IMPLEMENTATION_PLAN.md   # [HISTORICAL] Original implementation plan
 └── llms.txt                 # Official docs index with URLs
@@ -142,11 +145,16 @@ Scripts for working with skills:
 
 | Tool | Location | Purpose |
 |------|----------|---------|
-| `fetch-skill.sh` | `11-external-resources/tools/` | Download skill from GitHub |
+| `fetch-skill.sh` | `11-external-resources/tools/` | Download skill from GitHub (with commit SHA tracking) |
 | `validate-skill.sh` | `11-external-resources/tools/` | Validate SKILL.md format |
 | `deploy-skill.sh` | `11-external-resources/tools/` | Deploy single skill |
 | `deploy-all.sh` | `11-external-resources/tools/` | Deploy all core skills |
 | `update-sources.sh` | `11-external-resources/tools/` | Re-fetch all skills from sources |
+| `freshness-report.sh` | `11-external-resources/tools/` | Check for upstream skill updates |
+| `regenerate-catalog.sh` | `11-external-resources/tools/` | Auto-generate CATALOG.md |
+| `generate-stats.sh` | `11-external-resources/tools/` | Generate repository statistics |
+| `migrate-source-files.sh` | `11-external-resources/tools/` | One-time migration for commit SHA tracking |
+| `fix-unknown-shas.sh` | `11-external-resources/tools/` | Fix skills with "unknown" commit SHAs |
 
 ---
 
@@ -173,9 +181,10 @@ For creating or understanding skills:
 - Index file: `llms.txt`
 
 ### External Skills
-- Each skill has a `.source` file with origin URL and fetch timestamp
-- Run `11-external-resources/tools/update-sources.sh` to see all sources
-- Run `11-external-resources/tools/update-sources.sh --fetch` to refresh
+- Each skill has a `.source` file with origin URL, fetch timestamp, and commit SHA
+- `.source` files enable change detection via `freshness-report.sh`
+- Run `11-external-resources/tools/freshness-report.sh` to check for upstream updates
+- Run `11-external-resources/tools/update-sources.sh --fetch` to refresh all skills
 
 ---
 
@@ -211,6 +220,24 @@ cd 11-external-resources/tools/
 ./update-sources.sh --fetch
 ```
 
+### Check which skills have upstream changes
+```bash
+cd 11-external-resources/tools/
+./freshness-report.sh
+```
+
+### Regenerate the catalog after changes
+```bash
+cd 11-external-resources/tools/
+./regenerate-catalog.sh --output ../CATALOG.md
+```
+
+### Update repository statistics
+```bash
+cd 11-external-resources/tools/
+./generate-stats.sh --update-metadata
+```
+
 ---
 
 ## Important Notes
@@ -231,6 +258,10 @@ cd 11-external-resources/tools/
 
 | Date | Change |
 |------|--------|
+| 2026-01-07 | Added fix-unknown-shas.sh for fixing rate-limited commit SHA entries |
+| 2026-01-07 | Added maintenance infrastructure: freshness-report.sh, regenerate-catalog.sh, generate-stats.sh |
+| 2026-01-07 | Enhanced fetch-skill.sh with commit SHA tracking for change detection |
+| 2026-01-07 | Added CHANGELOG.md, CONTRIBUTING.md, .repo-metadata.json |
 | 2026-01-07 | Added `_repo-maintenance/` folder with maintainability analysis |
 | 2026-01-07 | Enhanced CLAUDE.md with comprehensive agent guidance |
 | 2026-01-06 | Initial repository creation with 49 docs + 32 skills |

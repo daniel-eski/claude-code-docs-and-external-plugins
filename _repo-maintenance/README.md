@@ -12,12 +12,13 @@
 
 | Document | Purpose | Read When... |
 |----------|---------|--------------|
+| [context-for-llm-agents.md](context-for-llm-agents.md) | **Start here** — Continuation context for AI | You're an LLM picking up this work |
+| [BOOTSTRAP-PROMPT.md](BOOTSTRAP-PROMPT.md) | Ready-to-use prompts for new sessions | You're starting a fresh Claude Code session |
 | [01-current-state.md](01-current-state.md) | Complete analysis of repository structure | You're new to this repo or need context |
 | [02-challenges.md](02-challenges.md) | Identified problems and gaps | You want to understand what needs fixing |
 | [03-recommendations.md](03-recommendations.md) | Prioritized solutions with rationale | You're deciding what to implement |
 | [04-implementation-specs.md](04-implementation-specs.md) | Detailed technical specifications | You're ready to implement changes |
 | [05-future-considerations.md](05-future-considerations.md) | Longer-term architectural ideas | You're planning beyond quick fixes |
-| [context-for-llm-agents.md](context-for-llm-agents.md) | Special guidance for AI assistants | You're an LLM continuing this work |
 
 ---
 

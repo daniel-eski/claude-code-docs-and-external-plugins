@@ -76,10 +76,38 @@ fi
 README_URL="$RAW_BASE/README.md"
 curl -sL -w "%{http_code}" "$README_URL" -o "$LOCAL_PATH/README.md" 2>/dev/null | grep -q "200" || rm -f "$LOCAL_PATH/README.md"
 
+# Get commit SHA for change detection
+COMMIT_SHA="unknown"
+BRANCH="main"
+if [[ "$GITHUB_URL" == *"/tree/main/"* ]]; then
+    COMMIT_API="https://api.github.com/repos/$REPO_PART/commits?path=$PATH_PART&per_page=1"
+elif [[ -n "$REPO_PATH" ]]; then
+    COMMIT_API="https://api.github.com/repos/$REPO_PATH/commits?per_page=1"
+else
+    COMMIT_API=""
+fi
+
+if [ -n "$COMMIT_API" ]; then
+    echo "  Fetching commit SHA..."
+    COMMIT_RESPONSE=$(curl -sL "$COMMIT_API" 2>/dev/null)
+    if [ -n "$COMMIT_RESPONSE" ]; then
+        # Extract SHA using grep/sed (avoid jq dependency)
+        COMMIT_SHA=$(echo "$COMMIT_RESPONSE" | grep -o '"sha": *"[^"]*"' | head -1 | sed 's/"sha": *"\([^"]*\)"/\1/')
+        if [ -z "$COMMIT_SHA" ]; then
+            COMMIT_SHA="unknown"
+            echo "  Warning: Could not extract commit SHA"
+        else
+            echo "  Commit SHA: ${COMMIT_SHA:0:7}"
+        fi
+    fi
+fi
+
 # Record source for tracking
 cat > "$LOCAL_PATH/.source" << EOF
 source: $GITHUB_URL
 fetched: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+commit_sha: $COMMIT_SHA
+branch: $BRANCH
 raw_base: $RAW_BASE
 EOF
 
