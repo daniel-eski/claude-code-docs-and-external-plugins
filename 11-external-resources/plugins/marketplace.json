@@ -1,0 +1,12 @@
+{
+  "name": "claude-code-community-plugins",
+  "description": "Community plugins for Claude Code, curated alongside the documentation repository",
+  "plugins": [
+    {
+      "name": "context-introspection",
+      "description": "Generates a comprehensive report of all context sources influencing your Claude Code session",
+      "source": "./context-introspection",
+      "version": "1.0.0"
+    }
+  ]
+}
