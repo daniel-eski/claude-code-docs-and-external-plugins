@@ -10,10 +10,79 @@
 A comprehensive offline resource combining:
 1. **Official Claude Code documentation** (folders `01-10`) — mirrored from https://code.claude.com/docs
 2. **Curated external skills library** (`11-external-resources/`) — 32 production-ready skills with deployment tools
-3. **Repository maintenance documentation** (`_repo-maintenance/`) — analysis and improvement plans
+3. **Best practices documents** (`12-best-practices/`) — 9 key docs from Anthropic engineering blog and platform
+4. **External resources guide** (`13-external-resources-guide/`) — curated links organized by use case
+5. **Repository maintenance documentation** (`_repo-maintenance/`) — analysis and improvement plans
 
-**Repository created**: January 2026  
+**Repository created**: January 2026
 **Documentation source date**: January 6, 2026
+
+---
+
+## Finding Documentation by Task
+
+Use this decision tree to quickly find the right resources. Each folder has a README.md with file descriptions.
+
+### "I need to set up or configure Claude Code"
+→ First time: `01-getting-started/quickstart.md` (5-minute guide)
+→ Full setup: `01-getting-started/setup.md` (installation, auth)
+→ Keyboard shortcuts: `01-getting-started/interactive-mode.md`
+→ Settings: `08-configuration/settings.md` (all config options)
+→ Browse all: `docs-index.md` (complete 49-file index)
+
+### "I need prompt engineering guidance"
+→ Start with `12-best-practices/prompt-engineering-overview.md` (local)
+→ For Claude 4.x specific: `12-best-practices/claude-4-prompting.md` (local)
+→ For more: `13-external-resources-guide/prompt-engineering.md` (links)
+
+### "I need to build agents or subagents"
+→ Start with `12-best-practices/building-effective-agents.md` (local)
+→ Subagents: `02-core-features/subagents.md` (local)
+→ Advanced: `12-best-practices/multi-agent-research-system.md` (local)
+→ For more: `13-external-resources-guide/agent-development.md` (links)
+
+### "I need agentic coding best practices"
+→ Read `12-best-practices/claude-code-best-practices.md` (local)
+→ Context management: `12-best-practices/context-engineering.md` (local)
+
+### "I need to use tools or MCP"
+→ MCP setup: `02-core-features/mcp.md` (local)
+→ Tool use overview: `12-best-practices/tool-use-overview.md` (local)
+→ Tool design: `12-best-practices/writing-tools-for-agents.md` (local)
+→ For more: `13-external-resources-guide/mcp-resources.md` (links)
+
+### "I need to work with skills"
+→ Skills guide: `02-core-features/skills.md` (local)
+→ Skill library: `11-external-resources/CATALOG.md`
+
+### "I need to work with hooks"
+→ Hooks guide: `02-core-features/hooks-guide.md` (practical examples)
+→ Hooks reference: `02-core-features/hooks.md` (schema, events)
+
+### "I need CI/CD or automation"
+→ GitHub Actions: `06-cicd-automation/github-actions.md`
+→ GitLab CI/CD: `06-cicd-automation/gitlab-ci-cd.md`
+→ Headless/programmatic: `06-cicd-automation/headless.md`
+
+### "I need cloud provider setup"
+→ AWS Bedrock: `04-cloud-providers/amazon-bedrock.md`
+→ Google Vertex AI: `04-cloud-providers/google-vertex-ai.md`
+→ Microsoft Foundry: `04-cloud-providers/microsoft-foundry.md`
+→ Generic gateway: `04-cloud-providers/llm-gateway.md`
+
+### "I need enterprise/security guidance"
+→ Security: `05-enterprise/security.md`
+→ IAM: `05-enterprise/iam.md`
+→ Sandboxing: `05-enterprise/sandboxing.md`
+
+### "I need API documentation (not CLI)"
+→ See `13-external-resources-guide/api-reference.md` (links to platform.claude.com)
+
+### "I want to learn through tutorials"
+→ See `13-external-resources-guide/tutorials-courses.md` (links)
+
+### "I need to find GitHub repositories"
+→ See `13-external-resources-guide/github-repositories.md` (links)
 
 ---
 
@@ -105,26 +174,31 @@ Both documentation sets ensure continuity across AI sessions.
 
 ```
 /
-├── 01-getting-started/      # 4 docs: overview, quickstart, setup, interactive-mode
-├── 02-core-features/        # 7 docs: memory, skills, subagents, hooks, mcp
-├── 03-ide-integration/      # 4 docs: vs-code, jetbrains, desktop, chrome
-├── 04-cloud-providers/      # 4 docs: bedrock, vertex-ai, foundry, llm-gateway
-├── 05-enterprise/           # 6 docs: iam, security, sandboxing, monitoring
-├── 06-cicd-automation/      # 4 docs: github-actions, gitlab, headless
-├── 07-plugins/              # 4 docs: plugins, reference, discovery, marketplaces
-├── 08-configuration/        # 6 docs: settings, model-config, terminal, statusline
-├── 09-reference/            # 6 docs: cli-reference, troubleshooting, costs
-├── 10-other/                # 4 docs: slack, changelog, legal, workflows
-├── 11-external-resources/   # Skills library with tools and guides
-├── _repo-maintenance/       # Maintenance analysis and recommendations
-├── .repo-metadata.json      # Centralized sync state and statistics
-├── CHANGELOG.md             # Repository change history
-├── CLAUDE.md                # This file
-├── CONTRIBUTING.md          # Contribution guidelines
-├── README.md                # Human-readable overview
-├── IMPLEMENTATION_PLAN.md   # [HISTORICAL] Original implementation plan
-└── llms.txt                 # Official docs index with URLs
+├── 01-getting-started/        # 4 docs + README.md: overview, quickstart, setup, interactive-mode
+├── 02-core-features/          # 7 docs + README.md: memory, skills, subagents, hooks, mcp
+├── 03-ide-integration/        # 4 docs + README.md: vs-code, jetbrains, desktop, chrome
+├── 04-cloud-providers/        # 4 docs + README.md: bedrock, vertex-ai, foundry, llm-gateway
+├── 05-enterprise/             # 6 docs + README.md: iam, security, sandboxing, monitoring
+├── 06-cicd-automation/        # 4 docs + README.md: github-actions, gitlab, headless
+├── 07-plugins/                # 4 docs + README.md: plugins, reference, discovery, marketplaces
+├── 08-configuration/          # 6 docs + README.md: settings, model-config, terminal, statusline
+├── 09-reference/              # 6 docs + README.md: cli-reference, troubleshooting, costs
+├── 10-other/                  # 4 docs + README.md: slack, changelog, legal, workflows
+├── 11-external-resources/     # Skills library with tools and guides
+├── 12-best-practices/         # 9 key docs: agent patterns, prompting, tools
+├── 13-external-resources-guide/  # Curated links by use case
+├── _repo-maintenance/         # Maintenance analysis and recommendations
+├── .repo-metadata.json        # Centralized sync state and statistics
+├── CHANGELOG.md               # Repository change history
+├── CLAUDE.md                  # This file
+├── CONTRIBUTING.md            # Contribution guidelines
+├── docs-index.md              # Master index of all 49 docs with descriptions
+├── README.md                  # Human-readable overview
+├── IMPLEMENTATION_PLAN.md     # [HISTORICAL] Original implementation plan
+└── llms.txt                   # Official docs index with URLs
 ```
+
+**Note**: Each folder 01-10 has a README.md with one-line descriptions of all files in that folder.
 
 ---
 
@@ -132,9 +206,13 @@ Both documentation sets ensure continuity across AI sessions.
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
+| `docs-index.md` | Master index of all 49 docs with descriptions | Quick task-based navigation, scanning file contents |
 | `llms.txt` | Official docs index with URLs | Comparing with upstream, finding doc URLs |
 | `README.md` | Complete navigation with descriptions | Human users exploring the repo |
+| `01-10/README.md` | Per-folder file indexes | Understanding files within a specific folder |
 | `11-external-resources/CATALOG.md` | Skills inventory | Finding and deploying skills |
+| `12-best-practices/README.md` | Best practices index | Finding locally-saved key documents |
+| `13-external-resources-guide/README.md` | External links by use case | Finding documentation beyond local files |
 | `_repo-maintenance/README.md` | Maintenance doc index | Before making structural changes |
 
 ---
@@ -258,6 +336,11 @@ cd 11-external-resources/tools/
 
 | Date | Change |
 |------|--------|
+| 2026-01-09 | Added per-folder README.md navigation files to all 01-10 documentation folders |
+| 2026-01-09 | Added `docs-index.md` master index with all 49 files and task-based navigation |
+| 2026-01-09 | Enhanced "Finding Documentation by Task" with file-level paths |
+| 2026-01-09 | Added `12-best-practices/` with 9 key documents from Anthropic engineering blog and platform docs |
+| 2026-01-09 | Added `13-external-resources-guide/` with curated links organized by use case |
 | 2026-01-07 | Added fix-unknown-shas.sh for fixing rate-limited commit SHA entries |
 | 2026-01-07 | Added maintenance infrastructure: freshness-report.sh, regenerate-catalog.sh, generate-stats.sh |
 | 2026-01-07 | Enhanced fetch-skill.sh with commit SHA tracking for change detection |

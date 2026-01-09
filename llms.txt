@@ -1,6 +1,18 @@
 # Claude Code Docs
 
-## Docs
+## Best Practices (12-best-practices/)
+
+- [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices): Comprehensive guide to agentic coding workflows, CLAUDE.md configuration, and optimization.
+- [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents): Foundational agent architecture patterns, workflows vs agents.
+- [Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents): Managing context for long-running agents, compaction, memory.
+- [Multi-agent Research System](https://www.anthropic.com/engineering/multi-agent-research-system): Orchestrator-worker pattern, 90% performance gains.
+- [Writing Tools for Agents](https://www.anthropic.com/engineering/writing-tools-for-agents): Tool design principles, MCP best practices.
+- [The "think" Tool](https://www.anthropic.com/engineering/claude-think-tool): Intermediate reasoning for complex tool use tasks.
+- [Claude 4 Prompting Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices): Claude 4.x specific prompting techniques.
+- [Prompt Engineering Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview): Core prompt engineering techniques.
+- [Tool Use Overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview): Tool use fundamentals, client vs server tools.
+
+## Claude Code Docs (01-10/)
 
 - [Claude Code on Amazon Bedrock](https://code.claude.com/docs/en/amazon-bedrock.md): Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.
 - [Analytics](https://code.claude.com/docs/en/analytics.md): View detailed usage insights and productivity metrics for your organization's Claude Code deployment.

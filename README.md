@@ -5,16 +5,20 @@
 This repository combines:
 - **Official documentation** from [code.claude.com](https://code.claude.com) for offline reference
 - **32 production-ready skills** from the community, ready to deploy
+- **Best practices** from Anthropic's engineering blog and platform docs
+- **External resources guide** with curated links to tutorials, courses, and GitHub repos
 - **Skill authoring guides** to help you create your own skills
 
-**Last Updated:** January 6, 2026 (documentation) | January 7, 2026 (skills & repo structure)
+**Last Updated:** January 6, 2026 (documentation) | January 9, 2026 (best practices & external resources)
 
 ---
 
 ## 🚀 Quick Start
 
 ### For Claude Code Documentation
-Browse folders `01-10` for official documentation on any topic.
+- **Quick navigation**: See [docs-index.md](docs-index.md) for all 49 files with descriptions
+- **By folder**: Browse folders `01-10` — each has a README.md with file descriptions
+- **By task**: See CLAUDE.md "Finding Documentation by Task" section
 
 ### For Skills
 ```bash
@@ -35,7 +39,7 @@ See [CLAUDE.md](CLAUDE.md) for comprehensive guidance on working with this repos
 
 ### Core Documentation (folders 01-10)
 
-Official Claude Code documentation mirrored from https://code.claude.com/docs.
+Official Claude Code documentation mirrored from https://code.claude.com/docs. Each folder contains a README.md with one-line descriptions of all files.
 
 | Folder | Topic | Files |
 |--------|-------|-------|
@@ -67,6 +71,35 @@ Curated external skills ready to deploy.
 - [CATALOG.md](11-external-resources/CATALOG.md) — Complete skill inventory
 - [QUICKSTART.md](11-external-resources/QUICKSTART.md) — 5-minute deployment guide
 - [_meta/CONTINUATION-GUIDE.md](11-external-resources/_meta/CONTINUATION-GUIDE.md) — For AI agents working with skills
+
+### Best Practices (12-best-practices/)
+
+High-value documents saved locally from Anthropic's engineering blog and platform docs.
+
+| Document | Description |
+|----------|-------------|
+| [claude-code-best-practices.md](12-best-practices/claude-code-best-practices.md) | Agentic coding workflows, CLAUDE.md, optimization |
+| [building-effective-agents.md](12-best-practices/building-effective-agents.md) | Agent architecture patterns, when to use workflows vs agents |
+| [context-engineering.md](12-best-practices/context-engineering.md) | Managing context for long-running agents |
+| [multi-agent-research-system.md](12-best-practices/multi-agent-research-system.md) | Orchestrator-worker pattern, 90% performance gains |
+| [writing-tools-for-agents.md](12-best-practices/writing-tools-for-agents.md) | Tool design principles, MCP best practices |
+| [think-tool.md](12-best-practices/think-tool.md) | Intermediate reasoning for complex tasks |
+| [claude-4-prompting.md](12-best-practices/claude-4-prompting.md) | Claude 4.x specific prompting techniques |
+| [prompt-engineering-overview.md](12-best-practices/prompt-engineering-overview.md) | Core prompt engineering techniques |
+| [tool-use-overview.md](12-best-practices/tool-use-overview.md) | Tool use fundamentals, client vs server tools |
+
+### External Resources Guide (13-external-resources-guide/)
+
+Curated links to official Anthropic documentation, organized by use case.
+
+| File | Use Case |
+|------|----------|
+| [prompt-engineering.md](13-external-resources-guide/prompt-engineering.md) | Prompt engineering tutorials and guides |
+| [agent-development.md](13-external-resources-guide/agent-development.md) | Building agents and subagents |
+| [api-reference.md](13-external-resources-guide/api-reference.md) | Claude API documentation |
+| [tutorials-courses.md](13-external-resources-guide/tutorials-courses.md) | Video courses and interactive tutorials |
+| [mcp-resources.md](13-external-resources-guide/mcp-resources.md) | Model Context Protocol documentation |
+| [github-repositories.md](13-external-resources-guide/github-repositories.md) | Official Anthropic GitHub repos |
 
 ### Repository Meta (_repo-maintenance/)
 
@@ -213,7 +246,9 @@ See [11-external-resources/CATALOG.md](11-external-resources/CATALOG.md) for the
 | Metric | Count |
 |--------|-------|
 | Documentation files | 49 |
-| Categories | 11 |
+| Categories | 13 |
+| Best practices docs | 9 |
+| External resource guides | 7 |
 | Core skills | 28 |
 | Extended skills | 4 |
 | Community skill links | 30+ |
