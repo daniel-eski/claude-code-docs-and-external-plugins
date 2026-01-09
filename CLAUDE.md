@@ -10,9 +10,10 @@
 A comprehensive offline resource combining:
 1. **Official Claude Code documentation** (folders `01-10`) — mirrored from https://code.claude.com/docs
 2. **Curated external skills library** (`11-external-resources/`) — 32 production-ready skills with deployment tools
-3. **Best practices documents** (`12-best-practices/`) — 9 key docs from Anthropic engineering blog and platform
-4. **External resources guide** (`13-external-resources-guide/`) — curated links organized by use case
-5. **Repository maintenance documentation** (`_repo-maintenance/`) — analysis and improvement plans
+3. **Plugins** (`11-external-resources/plugins/`) — 2 production plugins (claude-code-advisor, context-introspection)
+4. **Best practices documents** (`12-best-practices/`) — 9 key docs from Anthropic engineering blog and platform
+5. **External resources guide** (`13-external-resources-guide/`) — curated links organized by use case
+6. **Repository maintenance documentation** (`_repo-maintenance/`) — analysis and improvement plans
 
 **Repository created**: January 2026
 **Documentation source date**: January 6, 2026
@@ -83,6 +84,14 @@ Use this decision tree to quickly find the right resources. Each folder has a RE
 
 ### "I need to find GitHub repositories"
 → See `13-external-resources-guide/github-repositories.md` (links)
+
+### "I need to understand Claude Code features deeply"
+→ Use the `claude-code-advisor` plugin: `11-external-resources/plugins/claude-code-advisor/`
+→ Commands: `/cc-advisor`, `/cc-analyze`, `/cc-verify`, `/cc-design`
+
+### "I need to see what context is loaded in my session"
+→ Use the `context-introspection` plugin: `11-external-resources/plugins/context-introspection/`
+→ Command: `/context-introspection:report`
 
 ---
 
@@ -336,6 +345,10 @@ cd 11-external-resources/tools/
 
 | Date | Change |
 |------|--------|
+| 2026-01-09 | Merged all feature branches: consolidated navigation, best practices, plugins, and tooling |
+| 2026-01-09 | Added `claude-code-advisor` plugin (10 agents, 22 references, 4 commands) |
+| 2026-01-09 | Added `context-introspection` plugin for session context reporting |
+| 2026-01-09 | Added plugin ecosystem documentation in `11-external-resources/plugins/` |
 | 2026-01-09 | Added per-folder README.md navigation files to all 01-10 documentation folders |
 | 2026-01-09 | Added `docs-index.md` master index with all 49 files and task-based navigation |
 | 2026-01-09 | Enhanced "Finding Documentation by Task" with file-level paths |

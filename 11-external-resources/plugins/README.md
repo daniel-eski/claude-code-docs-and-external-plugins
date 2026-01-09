@@ -104,6 +104,24 @@ When adding new plugins or updating existing entries:
 
 ---
 
+## Local Plugins in This Repository
+
+These plugins are included directly in this repository:
+
+| Plugin | Description | Commands |
+|--------|-------------|----------|
+| [claude-code-advisor](claude-code-advisor/) | Strategic advisor for Claude Code architecture with 10 specialized agents, 22 reference docs | `/cc-advisor`, `/cc-analyze`, `/cc-verify`, `/cc-design` |
+| [context-introspection](context-introspection/) | Generates reports of all context sources influencing your session | `/context-introspection:report` |
+
+**To install:**
+```bash
+# From this repository
+claude plugin add ./11-external-resources/plugins/claude-code-advisor
+claude plugin add ./11-external-resources/plugins/context-introspection
+```
+
+---
+
 ## Related Resources
 
 | Resource | Location | Description |

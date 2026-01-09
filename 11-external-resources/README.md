@@ -55,7 +55,10 @@ See [QUICKSTART.md](QUICKSTART.md) for detailed deployment instructions.
 │   ├── aws-skills/        # AWS infrastructure automation
 │   └── context-engineering/ # Educational content on context engineering
 │
-├── plugins/               # Community plugin ecosystem documentation
+├── plugins/               # Community plugin ecosystem + local plugins
+│   ├── claude-code-advisor/  # Strategic advisor plugin (10 agents, 22 refs)
+│   ├── context-introspection/ # Session context reporting plugin
+│   ├── marketplace.json   # Plugin registry for this repository
 │   ├── README.md          # Plugin navigation guide
 │   ├── ECOSYSTEM-GUIDE.md # How plugins work
 │   ├── REGISTRY.md        # Evaluated plugins catalog
