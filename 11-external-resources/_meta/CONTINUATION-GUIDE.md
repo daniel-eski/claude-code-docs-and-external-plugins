@@ -162,20 +162,21 @@ cd 11-external-resources/tools/
    - Many skills have scripts/, references/, assets/
    - Could enhance fetch-skill.sh to grab these too
 
-3. **URL verification command** - See FUTURE-ENHANCEMENTS.md
-   - Would prevent 404 surprises
-
 ### Medium Value / Nice to Have
 
-4. **Batch fetch command** - See FUTURE-ENHANCEMENTS.md
-5. **Smart update checker** - Compare local vs remote
-6. **README templates** - Reduce manual work
+3. **Batch fetch command** - See FUTURE-ENHANCEMENTS.md
+4. **README templates** - Reduce manual work
+
+### Now Implemented ✅
+
+- ~~Smart update checker~~ → `freshness-report.sh` compares local vs remote commit SHAs
+- ~~Auto-regenerate catalog~~ → `regenerate-catalog.sh` generates CATALOG.md
+- ~~URL verification~~ → fetch-skill.sh handles 404s gracefully
 
 ### Lower Value / Someday
 
-7. **Parallel fetching**
-8. **Invocation testing**
-9. **Auto-regenerate registry**
+5. **Parallel fetching**
+6. **Invocation testing**
 
 ---
 
@@ -277,6 +278,9 @@ cd 11-external-resources/tools/
 | deploy-skill.sh | `./deploy-skill.sh <skill-dir> [target]` |
 | deploy-all.sh | `./deploy-all.sh [target]` |
 | update-sources.sh | `./update-sources.sh [--fetch]` |
+| freshness-report.sh | `./freshness-report.sh [--verbose]` |
+| regenerate-catalog.sh | `./regenerate-catalog.sh --output ../CATALOG.md` |
+| generate-stats.sh | `./generate-stats.sh [--json\|--markdown]` |
 
 ---
 

@@ -8,6 +8,7 @@ A curated collection of community skills, plugins, and learning resources for Cl
 |---------|-------------|-------------|
 | [core-skills/](core-skills/) | Production-ready skills | You need working skills now |
 | [extended-skills/](extended-skills/) | Specialized skills | You have specific domain needs |
+| [plugins/](plugins/) | Community plugin ecosystem | Evaluating or installing plugins |
 | [reference/](reference/) | Links to external resources | You want to explore more |
 | [tools/](tools/) | Deployment scripts | You're setting up skills |
 | [meta/](meta/) | Skill authoring guides | You're creating skills |
@@ -53,6 +54,14 @@ See [QUICKSTART.md](QUICKSTART.md) for detailed deployment instructions.
 ├── extended-skills/       # Specialized domain skills
 │   ├── aws-skills/        # AWS infrastructure automation
 │   └── context-engineering/ # Educational content on context engineering
+│
+├── plugins/               # Community plugin ecosystem documentation
+│   ├── README.md          # Plugin navigation guide
+│   ├── ECOSYSTEM-GUIDE.md # How plugins work
+│   ├── REGISTRY.md        # Evaluated plugins catalog
+│   ├── MARKETPLACES.md    # Known plugin marketplaces
+│   ├── EVALUATION-CRITERIA.md # How to assess plugins
+│   └── CONSIDERATIONS.md  # Plugins for future research
 │
 ├── reference/             # Curated external links
 ├── tools/                 # Deployment & validation scripts
