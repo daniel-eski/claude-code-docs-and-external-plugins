@@ -11,7 +11,7 @@
     {
       "name": "context-introspection",
       "description": "Generates a comprehensive report of all context sources influencing your Claude Code session",
-      "source": "./context-introspection",
+      "source": "./experimental/context-introspection",
       "version": "1.0.0"
     }
   ]
